@@ -1,0 +1,37 @@
+body {
+    background-color: #007 !important;
+    
+}
+
+.countainer{
+    display: flex;
+    background-color: #007 !important;
+    align-items: center;
+    justify-content: center;
+   height: 78vh;
+}
+
+.quizCard{
+    width: 30rem;
+}
+
+.question-footer{
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+.quiz-answer-card:hover{
+    cursor: pointer;
+    background-color: #efefef;
+}
+
+.bg-success, .bg-danger{
+    color: white;
+}
+
+.buttonRow{
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
