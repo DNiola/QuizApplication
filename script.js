@@ -1,21 +1,20 @@
 let questions = [
   {
     question: "Was ist in einer HTML-Datei im Browser angezeigt keine Lüge?",
-    answer_1: "< QUOTE>Hier steht ein Kommentar</QUOTE>",
-    answer_2: "< U>Dieser Text ist unsichtbar</U>",
-    answer_3: "< TT>Dieser Text ist doppelt unterstrichen</TT>",
-    answer_4: "< B>Dieser Text ist fett</B>",
+    answer_1: "< QUOTE>Hier steht ein Kommentar< /QUOTE>",
+    answer_2: "< U>Dieser Text ist unsichtbar< /U>",
+    answer_3: "< TT>Dieser Text ist doppelt unterstrichen< /TT>",
+    answer_4: "< B>Dieser Text ist fett< /B>",
     right_answer: 4,
   },
   {
-    question:
-      "Was bedeutet HTML?",
+    question: "Was bedeutet HTML?",
     answer_1: "Hypertext Mark Language",
     answer_2: "Hypertext Mark Look",
     answer_3: "Hypertext Markup Language",
     answer_4: "Hypertext Markup Look",
     right_answer: 3,
-  },  
+  },
   {
     question: "Was ist eine mögliche Endung für eine HTML-Datei?",
     answer_1: "*.tml",
@@ -68,10 +67,13 @@ let questions = [
   },
   {
     question: "Welchen Einfluss hat das Pseudoattribut :empty?",
-    answer_1: "Damit werden alle Unterelemente aus einem HTML-Element gelöscht.",
-    answer_2: "Damit kann überprüft werden, ob der Nutzer Eingaben in einem Feld vorgenommen hat.",
+    answer_1:
+      "Damit werden alle Unterelemente aus einem HTML-Element gelöscht.",
+    answer_2:
+      "Damit kann überprüft werden, ob der Nutzer Eingaben in einem Feld vorgenommen hat.",
     answer_3: "Darüber werden Eingaben in Formulare gelöscht.",
-    answer_4: "Darüber können leere HTML-Elemente angesprochen werden, wie zum Beispiel leere Tabellenzellen.",
+    answer_4:
+      "Darüber können leere HTML-Elemente angesprochen werden, wie zum Beispiel leere Tabellenzellen.",
     right_answer: 4,
   },
   {
@@ -91,7 +93,8 @@ let questions = [
     answer_4: "LiveScript",
     right_answer: 1,
   },
-  {question: "Welchen der folgenden logischen Operatoren gibt es nicht?",
+  {
+    question: "Welchen der folgenden logischen Operatoren gibt es nicht?",
     answer_1: "||",
     answer_2: "!=",
     answer_3: "<=",
@@ -122,23 +125,29 @@ let questions = [
     answer_4: "let namen = {}",
     right_answer: 2,
   },
-   
 ];
 
 let rightQuestions = 0;
 let currentQuestion = 0;
+
 let AUDIO_SUCCESS = new Audio("audio/success.mp3");
 let AUDIO_FAIL = new Audio("audio/fail.mp3");
 let AUDIO_NEXT = new Audio("audio/next-question.mp3");
 let AUDIO_RESTART = new Audio("audio/restart-game.mp3");
 let AUDIO_START = new Audio("audio/start-game.mp3"); // TODO
 
-function init() {
-  document.getElementById("all-questions").innerHTML = questions.length;
+function startGame() {
+  document.getElementById("bg-img").style = "background-image: none;"
+  document.getElementById("start").classList.add("d-none");
+  document.getElementById('v-pills-profile-tab').style = "color: red"
+  AUDIO_START.play();
   showQuestion();
 }
 
 function showQuestion() {
+  document.getElementById("questionCountainer").classList.remove("d-none");
+  document.getElementById("all-questions").innerHTML = questions.length;
+  
   if (gameIsOver()) {
     showEndScreen();
   } else {
@@ -160,37 +169,54 @@ function updateProgrssBar() {
 
 function updateToNextQuestion() {
   let question = questions[currentQuestion];
-
+  if (currentQuestion >= 5) {
+    switchToNextSection();
+  }
   document.getElementById("questionText").innerHTML = question["question"];
   document.getElementById("answer_1").innerHTML = question["answer_1"];
   document.getElementById("answer_2").innerHTML = question["answer_2"];
   document.getElementById("answer_3").innerHTML = question["answer_3"];
   document.getElementById("answer_4").innerHTML = question["answer_4"];
-
   document.getElementById("current-question").innerHTML = currentQuestion + 1;
 }
 
-function showEndScreen() {
-  document.getElementById("endScreen").style = "";
-  document.getElementById("questionBody").style = "display: none;";
-  document.getElementById("amountOfQuestions").innerHTML = questions.length;
-  document.getElementById("amountOfRightQuestions").innerHTML = rightQuestions;
-  document.getElementById("headerImage").src = "icon/brain-result.png";
+function switchToNextSection() {
+  if (currentQuestion === 5) {
+    document.getElementById('v-pills-profile-tab').style = ""
+    document.getElementById('v-pills-messages-tab').style = "color: red"
+  }
+  if (currentQuestion === 10) {
+    document.getElementById('v-pills-messages-tab').style = ""
+    document.getElementById('v-pills-settings-tab').style = "color: red"
+  }
 }
 
+function showEndScreen() {
+  if (currentQuestion === 15) {
+    document.getElementById('v-pills-settings-tab').style = ""
+    document.getElementById('v-pills-finish-tab').style = "color: green"
+  }
+  document.getElementById('body-block').style = "overflow: hidden;"
+  document.getElementById("endScreen").style = "";
+  document.getElementById("questionBody").style = "display: none;";
+  document.getElementById("questionText").style = "display: none;";
+  document.getElementById("amountOfQuestions").innerHTML = questions.length;
+  document.getElementById("amountOfRightQuestions").innerHTML = rightQuestions;
+}
 
 function answer(selection) {
   let question = questions[currentQuestion];
   let selectedQuestionNumber = selection;
   let idOfRightAnswer = `answer_${question["right_answer"]}`;
-
-  if (selectedQuestionNumber ==  idOfRightAnswer) {
+  if (selectedQuestionNumber == idOfRightAnswer) {
     document.getElementById(selection).parentNode.classList.add("bg-success");
     AUDIO_SUCCESS.play();
     rightQuestions++;
   } else {
     document.getElementById(selection).parentNode.classList.add("bg-danger");
-    document.getElementById(idOfRightAnswer).parentNode.classList.add("bg-success");
+    document
+      .getElementById(idOfRightAnswer)
+      .parentNode.classList.add("bg-success");
     AUDIO_FAIL.play();
   }
   document.getElementById("nextButton").disabled = false;
@@ -216,11 +242,13 @@ function resetAnswerButtons() {
 }
 
 function restartGame() {
-  document.getElementById("headerImage").src = "img/card-background.jpg";
+  document.getElementById('v-pills-profile-tab').style = "color: red"
+  document.getElementById('v-pills-finish-tab').style = ""
   document.getElementById("endScreen").style = "display: none;";
   document.getElementById("questionBody").style = "";
+  document.getElementById("questionText").style = "";
   rightQuestions = 0;
   currentQuestion = 0;
   AUDIO_RESTART.play();
-  init();
+  showQuestion();
 }
