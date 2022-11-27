@@ -139,7 +139,7 @@ let AUDIO_START = new Audio("audio/start-game.mp3"); // TODO
 function startGame() {
   document.getElementById("bg-img").style = "background-image: none;"
   document.getElementById("start").classList.add("d-none");
-  document.getElementById('v-pills-profile-tab').style = "color: red"
+  document.getElementById('v-pills-profile-tab').style = "margin-left: 13px;  margin-right: 13px;  background: green;"
   AUDIO_START.play();
   showQuestion();
 }
@@ -183,18 +183,18 @@ function updateToNextQuestion() {
 function switchToNextSection() {
   if (currentQuestion === 5) {
     document.getElementById('v-pills-profile-tab').style = ""
-    document.getElementById('v-pills-messages-tab').style = "color: red"
+    document.getElementById('v-pills-messages-tab').style = "margin-left: 13px;  margin-right: 13px;  background: green;"
   }
   if (currentQuestion === 10) {
     document.getElementById('v-pills-messages-tab').style = ""
-    document.getElementById('v-pills-settings-tab').style = "color: red"
+    document.getElementById('v-pills-settings-tab').style = "margin-left: 13px;  margin-right: 13px;  background: green;"
   }
 }
 
 function showEndScreen() {
   if (currentQuestion === 15) {
     document.getElementById('v-pills-settings-tab').style = ""
-    document.getElementById('v-pills-finish-tab').style = "color: green"
+    document.getElementById('v-pills-finish-tab').style = "margin-left: 13px;  margin-right: 13px;  background: green;"
   }
   document.getElementById('body-block').style = "overflow: hidden;"
   document.getElementById("endScreen").style = "";
@@ -242,7 +242,7 @@ function resetAnswerButtons() {
 }
 
 function restartGame() {
-  document.getElementById('v-pills-profile-tab').style = "color: red"
+  document.getElementById('v-pills-profile-tab').style = "margin-left: 13px;  margin-right: 13px;  background: green;"
   document.getElementById('v-pills-finish-tab').style = ""
   document.getElementById("endScreen").style = "display: none;";
   document.getElementById("questionBody").style = "";

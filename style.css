@@ -10,6 +10,10 @@ body {
 .bg-27355C {
   background-color: #27355c !important;
 }
+.bg-80808056{
+  background-color: #00000042;
+}
+
 .img-tropy {
   position: absolute;
   right: 0;
@@ -17,6 +21,14 @@ body {
   display: flex;
   align-items: center;
   top: 0;
+}
+.sectionPosi:hover{
+color: #d8dce8!important;
+}
+.sectionPosi{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .tropy-size{
 width: 100px;
@@ -35,13 +47,19 @@ width: 100px;
 .start-text-countainer {
   height: 100%;
 }
-.align-itemsC{
+.start-text{
+  font-family: 'PT Sans', sans-serif;
+}
+.endTextPosi{
   align-items: center;
     display: flex;
     justify-content: space-between;
     height: 100%;
-
 } 
+
+.align-items{
+align-items: center;
+}
 .bg-img {
   background-image: url(img/brainbg.jpg);
   background-position: center;
@@ -91,9 +109,11 @@ width: 100px;
   background-color: #efefef;
 }
 
-.bg-success,
+.bg-success{
+  background-color: #B7F799 !important;
+}
 .bg-danger {
-  color: white;
+  background-color: #FFA3A4 !important; 
 }
 
 .buttonRow {
@@ -107,6 +127,15 @@ width: 100px;
   justify-content: space-around;
   
 }
+.boxWithLetter {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 @media only screen and (max-width: 650px){
   .quizCard {
