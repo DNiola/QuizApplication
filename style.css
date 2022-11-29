@@ -73,6 +73,7 @@ align-items: center;
   border-radius: unset !important;
 }
 .progress {
+  z-index: 2;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -90,8 +91,8 @@ align-items: center;
   justify-content: center;
   height: 100vh;
 }
-.index1{
-  z-index: 99999999 !important;
+.index2{
+  z-index: 2 !important;
 }
 .quizCard {
   max-width: 40rem;
@@ -139,19 +140,28 @@ align-items: center;
   justify-content: center;
 }
 
-
+.my-flex-column{
+  flex-direction: column !important;
+}
 
 @media only screen and (max-width: 650px){
-  .quizCard {
+  .quizCard  {
     min-width: 100% !important;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     min-height: 100% !important;
-  }
+    align-items: center;
+}
 .progress{
   top: 0;
 }
 .buttonflex-end {
   justify-content: center !important;
+}
+.navRE{
+  padding-top: 0 !important;
+}
+.my-flex-column{
+  flex-direction: row !important;
 }
 }
