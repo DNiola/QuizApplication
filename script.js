@@ -212,7 +212,6 @@ function answer(selection) {
   let question = questions[currentQuestion];
   let selectedQuestionNumber = selection;
   let idOfRightAnswer = `answer_${question["right_answer"]}`;
-  disabledButtonsAfterClick()
   if (selectedQuestionNumber == idOfRightAnswer) {
     document.getElementById(selection).parentNode.classList.add("bg-success");
     AUDIO_SUCCESS.play();
@@ -224,16 +223,26 @@ function answer(selection) {
       .parentNode.classList.add("bg-success");
     AUDIO_FAIL.play();
   }
+  disabledButtonsAfterClick();
   document.getElementById("nextButton").disabled = false;
 }
 
 function disabledButtonsAfterClick() {
-  document.getElementById("answerBtn1").disabled = false;
-  document.getElementById("answerBtn2").disabled = false;
-  document.getElementById("answerBtn3").disabled = false;
-  document.getElementById("answerBtn4").disabled = false;
+  document.getElementById("answerBtn1").style = "pointer-events: none";
+  document.getElementById("answerBtn2").style = "pointer-events: none";
+  document.getElementById("answerBtn3").style = "pointer-events: none";
+  document.getElementById("answerBtn4").style = "pointer-events: none";
 }
+
+function abledButtonsAfterClick() {
+  document.getElementById("answerBtn1").style = "pointer-events: ";
+  document.getElementById("answerBtn2").style = "pointer-events: ";
+  document.getElementById("answerBtn3").style = "pointer-events: ";
+  document.getElementById("answerBtn4").style = "pointer-events: ";
+}
+
 function nextQuestion() {
+  abledButtonsAfterClick();
   document.getElementById("nextButton").disabled = true;
   AUDIO_NEXT.play();
   currentQuestion++;
