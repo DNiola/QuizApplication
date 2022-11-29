@@ -140,6 +140,10 @@ body {
 .my-flex-column {
   flex-direction: column !important;
 }
+.logoPosi {
+  padding: 12px;
+  padding-top: 24px;
+}
 
 @media only screen and (max-width: 650px) {
   .quizCard {
@@ -166,9 +170,21 @@ body {
     display: flex;
     align-items: center;
   }
-  .logoPosiRE{
+  .logoPosi {
     display: flex;
-   width: 100%;
+    width: 100%;
     justify-content: center;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .sectionPosi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -6px;
+  }
+  .reText{
+      font-weight: bolder;
+      font-size: initial;
   }
 }
