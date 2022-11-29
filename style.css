@@ -1,20 +1,18 @@
 body {
   margin: 0;
 }
-.d-none{
+.d-none {
   display: none;
 }
-.bg-btn{
-  background-color: #FF4E10;
+.bg-btn {
+  background-color: #ff4e10;
 }
 .bg-27355C {
   background-color: #27355c !important;
 }
-.bg-80808056{
+.bg-80808056 {
   background-color: #00000042;
 }
-
-
 
 .img-tropy {
   position: absolute;
@@ -24,18 +22,18 @@ body {
   align-items: center;
   top: 0;
 }
-.sectionPosi:hover{
-color: #d8dce8!important;
+.sectionPosi:hover {
+  color: #d8dce8 !important;
 }
-.sectionPosi{
+.sectionPosi {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.tropy-size{
-width: 100px;
+.tropy-size {
+  width: 100px;
 }
-.brainSize{
+.brainSize {
   height: 128px;
   width: 128px;
 }
@@ -49,18 +47,18 @@ width: 100px;
 .start-text-countainer {
   height: 100%;
 }
-.start-text{
-  font-family: 'PT Sans', sans-serif;
+.start-text {
+  font-family: "PT Sans", sans-serif;
 }
-.endTextPosi{
+.endTextPosi {
   align-items: center;
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-} 
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
 
-.align-items{
-align-items: center;
+.align-items {
+  align-items: center;
 }
 .bg-img {
   background-image: url(img/brainbg.jpg);
@@ -91,7 +89,7 @@ align-items: center;
   justify-content: center;
   height: 100vh;
 }
-.index2{
+.index2 {
   z-index: 2 !important;
 }
 .quizCard {
@@ -114,11 +112,11 @@ align-items: center;
   background-color: #efefef;
 }
 
-.bg-success{
-  background-color: #B7F799 !important;
+.bg-success {
+  background-color: #b7f799 !important;
 }
 .bg-danger {
-  background-color: #FFA3A4 !important; 
+  background-color: #ffa3a4 !important;
 }
 
 .buttonRow {
@@ -130,7 +128,6 @@ align-items: center;
 .card-question-site {
   height: 100%;
   justify-content: space-around;
-  
 }
 .boxWithLetter {
   height: 40px;
@@ -140,28 +137,38 @@ align-items: center;
   justify-content: center;
 }
 
-.my-flex-column{
+.my-flex-column {
   flex-direction: column !important;
 }
 
-@media only screen and (max-width: 650px){
-  .quizCard  {
+@media only screen and (max-width: 650px) {
+  .quizCard {
     min-width: 100% !important;
     display: flex;
     flex-direction: column;
     min-height: 100% !important;
     align-items: center;
-}
-.progress{
-  top: 0;
-}
-.buttonflex-end {
-  justify-content: center !important;
-}
-.navRE{
-  padding-top: 0 !important;
-}
-.my-flex-column{
-  flex-direction: row !important;
-}
+  }
+  .progress {
+    top: 0;
+  }
+  .buttonflex-end {
+    justify-content: center !important;
+  }
+  .navRE {
+    padding-top: 0 !important;
+  }
+  .my-flex-column {
+    flex-direction: row !important;
+  }
+  .navCountainerRE {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .logoPosiRE{
+    display: flex;
+   width: 100%;
+    justify-content: center;
+  }
 }
