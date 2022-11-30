@@ -1,15 +1,20 @@
 body {
   margin: 0;
 }
+
 .d-none {
   display: none;
 }
+
 .bg-btn {
-  background-color: #ff4e10;
+  background-color: #27355c;
+  border: unset;
 }
+
 .bg-27355C {
   background-color: #27355c !important;
 }
+
 .bg-80808056 {
   background-color: #00000042;
 }
@@ -22,34 +27,43 @@ body {
   align-items: center;
   top: 0;
 }
+
 .sectionPosi:hover {
   color: #d8dce8 !important;
 }
+
 .sectionPosi {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .tropy-size {
   width: 100px;
 }
+
 .brainSize {
   height: 128px;
   width: 128px;
 }
+
 .nav-link {
   color: #d8dce8;
   font-size: large;
 }
+
 .nav-link:hover {
   color: black;
 }
+
 .start-text-countainer {
   height: 100%;
 }
+
 .start-text {
   font-family: "PT Sans", sans-serif;
 }
+
 .endTextPosi {
   align-items: center;
   display: flex;
@@ -60,6 +74,7 @@ body {
 .align-items {
   align-items: center;
 }
+
 .bg-img {
   background-image: url(img/brainbg.jpg);
   background-position: center;
@@ -67,9 +82,11 @@ body {
   width: 100%;
   height: 100%;
 }
+
 .no-border {
   border-radius: unset !important;
 }
+
 .progress {
   z-index: 2;
   position: absolute;
@@ -77,11 +94,13 @@ body {
   left: 0;
   right: 0;
 }
+
 .buttonflex-end {
   display: flex;
   justify-content: flex-end !important;
   margin-top: 16px;
 }
+
 .countainer {
   display: flex;
   background-color: wheat !important;
@@ -89,9 +108,11 @@ body {
   justify-content: center;
   height: 100vh;
 }
+
 .index2 {
   z-index: 2 !important;
 }
+
 .quizCard {
   max-width: 40rem;
   width: 40rem;
@@ -107,6 +128,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
 .quiz-answer-card:hover {
   cursor: pointer;
   background-color: #efefef;
@@ -115,6 +137,7 @@ body {
 .bg-success {
   background-color: #b7f799 !important;
 }
+
 .bg-danger {
   background-color: #ffa3a4 !important;
 }
@@ -129,6 +152,7 @@ body {
   height: 100%;
   justify-content: space-around;
 }
+
 .boxWithLetter {
   height: 40px;
   width: 40px;
@@ -140,51 +164,87 @@ body {
 .my-flex-column {
   flex-direction: column !important;
 }
+
 .logoPosi {
   padding: 12px;
   padding-top: 24px;
 }
 
+
 @media only screen and (max-width: 650px) {
+
+  .endTextPosi {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+  }
+
   .quizCard {
-    min-width: 100% !important;
     display: flex;
     flex-direction: column;
-    min-height: 100% !important;
     align-items: center;
+    border: unset;
+    min-height: 100% !important;
+    min-width: 100% !important;
   }
+
   .progress {
     top: 0;
   }
+
   .buttonflex-end {
     justify-content: center !important;
   }
+
   .navRE {
     padding-top: 0 !important;
   }
+
   .my-flex-column {
     flex-direction: row !important;
   }
+
   .navCountainerRE {
     width: 100%;
     display: flex;
     align-items: center;
+    min-height: 180px;
   }
+
   .logoPosi {
     display: flex;
     width: 100%;
     justify-content: center;
   }
 }
-@media only screen and (max-width: 350px) {
+
+
+@media only screen and (max-width: 380px) {
+  .navCountainerRE {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    min-height: 172px;
+  }
+
+  .tropy-size {
+    width: 80px;
+  }
+
   .sectionPosi {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: -6px;
   }
-  .reText{
-      font-weight: bolder;
-      font-size: initial;
+
+  .reText {
+    font-weight: bolder;
+    font-size: small;
+  }
+
+  .questionTextRE {
+    font-size: small;
   }
 }

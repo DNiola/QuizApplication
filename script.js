@@ -53,8 +53,7 @@ let questions = [
     answer_1: "Nichts, mit CSS3 wurde die Eigenschaft verworfen.",
     answer_2: "Nichts. Die Eigenschaft ist erfunden.",
     answer_3: "Verbindet 3 Tabellen zu einer, wenn diese leer sind.",
-    answer_4:
-      "Bei Fließtext wird der Text so getrennt, dass mindestens 3 Zeilen am oberen Rand des 2. Blattes ausgedruckt werden.",
+    answer_4: "Bei Fließtext wird der Text so getrennt, dass mindestens 3 Zeilen am oberen Rand des 2. Blattes ausgedruckt werden.",
     right_answer: 4,
   },
   {
@@ -67,13 +66,10 @@ let questions = [
   },
   {
     question: "Welchen Einfluss hat das Pseudoattribut :empty?",
-    answer_1:
-      "Damit werden alle Unterelemente aus einem HTML-Element gelöscht.",
-    answer_2:
-      "Damit kann überprüft werden, ob der Nutzer Eingaben in einem Feld vorgenommen hat.",
+    answer_1: "Damit werden alle Unterelemente aus einem HTML-Element gelöscht.",
+    answer_2: "Damit kann überprüft werden, ob der Nutzer Eingaben in einem Feld vorgenommen hat.",
     answer_3: "Darüber werden Eingaben in Formulare gelöscht.",
-    answer_4:
-      "Darüber können leere HTML-Elemente angesprochen werden, wie zum Beispiel leere Tabellenzellen.",
+    answer_4: "Darüber können leere HTML-Elemente angesprochen werden, wie zum Beispiel leere Tabellenzellen.",
     right_answer: 4,
   },
   {
@@ -127,8 +123,10 @@ let questions = [
   },
 ];
 
+
 let rightQuestions = 0;
 let currentQuestion = 0;
+
 
 let AUDIO_SUCCESS = new Audio("audio/success.mp3");
 let AUDIO_FAIL = new Audio("audio/fail.mp3");
@@ -136,7 +134,10 @@ let AUDIO_NEXT = new Audio("audio/next-question.mp3");
 let AUDIO_RESTART = new Audio("audio/restart-game.mp3");
 let AUDIO_START = new Audio("audio/start-game.mp3"); // TODO
 
+
 function startGame() {
+  document.getElementById("questionCountainer").style =
+    "justify-content: flex-start;";
   document.getElementById("bg-img").style = "background-image: none;";
   document.getElementById("start").classList.add("d-none");
   document.getElementById("v-pills-profile-tab").style =
@@ -144,6 +145,7 @@ function startGame() {
   AUDIO_START.play();
   showQuestion();
 }
+
 
 function showQuestion() {
   document.getElementById("questionCountainer").classList.remove("d-none");
@@ -157,9 +159,11 @@ function showQuestion() {
   }
 }
 
+
 function gameIsOver() {
   return currentQuestion >= questions.length;
 }
+
 
 function updateProgrssBar() {
   let percent = (currentQuestion + 1) / questions.length;
@@ -167,6 +171,7 @@ function updateProgrssBar() {
   document.getElementById("progressBar").innerHTML = `${percent} %`;
   document.getElementById("progressBar").style = `width: ${percent}%;`;
 }
+
 
 function updateToNextQuestion() {
   let question = questions[currentQuestion];
@@ -181,18 +186,18 @@ function updateToNextQuestion() {
   document.getElementById("current-question").innerHTML = currentQuestion + 1;
 }
 
+
 function switchToNextSection() {
   if (currentQuestion === 5) {
     document.getElementById("v-pills-profile-tab").style = "";
-    document.getElementById("v-pills-messages-tab").style =
-      "margin-left: 13px;  margin-right: 13px;  background: green;";
+    document.getElementById("v-pills-messages-tab").style = "margin-left: 13px;  margin-right: 13px;  background: green;";
   }
   if (currentQuestion === 10) {
     document.getElementById("v-pills-messages-tab").style = "";
-    document.getElementById("v-pills-settings-tab").style =
-      "margin-left: 13px;  margin-right: 13px;  background: green;";
+    document.getElementById("v-pills-settings-tab").style = "margin-left: 13px;  margin-right: 13px;  background: green;";
   }
 }
+
 
 function showEndScreen() {
   if (currentQuestion === 15) {
@@ -208,6 +213,7 @@ function showEndScreen() {
   document.getElementById("amountOfRightQuestions").innerHTML = rightQuestions;
 }
 
+
 function answer(selection) {
   let question = questions[currentQuestion];
   let selectedQuestionNumber = selection;
@@ -218,14 +224,13 @@ function answer(selection) {
     rightQuestions++;
   } else {
     document.getElementById(selection).parentNode.classList.add("bg-danger");
-    document
-      .getElementById(idOfRightAnswer)
-      .parentNode.classList.add("bg-success");
+    document.getElementById(idOfRightAnswer).parentNode.classList.add("bg-success");
     AUDIO_FAIL.play();
   }
   disabledButtonsAfterClick();
   document.getElementById("nextButton").disabled = false;
 }
+
 
 function disabledButtonsAfterClick() {
   document.getElementById("answerBtn1").style = "pointer-events: none";
@@ -234,12 +239,14 @@ function disabledButtonsAfterClick() {
   document.getElementById("answerBtn4").style = "pointer-events: none";
 }
 
+
 function abledButtonsAfterClick() {
   document.getElementById("answerBtn1").style = "pointer-events: ";
   document.getElementById("answerBtn2").style = "pointer-events: ";
   document.getElementById("answerBtn3").style = "pointer-events: ";
   document.getElementById("answerBtn4").style = "pointer-events: ";
 }
+
 
 function nextQuestion() {
   abledButtonsAfterClick();
@@ -249,6 +256,7 @@ function nextQuestion() {
   resetAnswerButtons();
   showQuestion();
 }
+
 
 function resetAnswerButtons() {
   document.getElementById("answer_1").parentNode.classList.remove("bg-danger");
@@ -260,6 +268,7 @@ function resetAnswerButtons() {
   document.getElementById("answer_4").parentNode.classList.remove("bg-danger");
   document.getElementById("answer_4").parentNode.classList.remove("bg-success");
 }
+
 
 function restartGame() {
   document.getElementById("v-pills-profile-tab").style =

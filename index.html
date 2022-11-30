@@ -28,31 +28,28 @@
 <body id="body-block">
     <div class="countainer">
         <div class="progress no-border">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" id="progressBar" role="progressbar"
-                style="width: 0%;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" id="progressBar" role="progressbar" style="width: 0%;">
             </div>
         </div>
         <div class="quizCard card">
-
             <div class="d-flex flex-column bg-27355C navCountainerRE">
                 <div class="d-flex flex-column">
                     <div class="logoPosi">
                         <img src="icon/logo.png">
                     </div>
-                    <div class="navRE nav my-flex-column nav-pills pt-5"
-                        id="v-pills-tab">
+                    <div class="navRE nav my-flex-column nav-pills pt-5" id="v-pills-tab">
                         <div class="my-flex-column d-flex">
-                            <span class="nav-link sectionPosi"
-                                id="v-pills-profile-tab"><b class="reText">HTML</b></span>
-                            <span class="nav-link sectionPosi"
-                                id="v-pills-messages-tab">
-                                <b class="reText">CSS</b></span>
-                            <span class="nav-link sectionPosi"
-                                id="v-pills-settings-tab">
-                                <b class="reText">JavaScript</b></span>
+                            <span class="nav-link sectionPosi" id="v-pills-profile-tab">
+                                <b class="reText">HTML</b>
+                            </span>
+                            <span class="nav-link sectionPosi" id="v-pills-messages-tab">
+                                <b class="reText">CSS</b>
+                            </span>
+                            <span class="nav-link sectionPosi" id="v-pills-settings-tab">
+                                <b class="reText">JavaScript</b>
+                            </span>
                             <div class="navRE my-flex-column d-flex pt-5">
-                                <span class="nav-link sectionPosi"
-                                    id="v-pills-finish-tab">
+                                <span class="nav-link sectionPosi" id="v-pills-finish-tab">
                                     <b id="finish"><b class="reText">Finish</b></b></span>
                             </div>
                         </div>
@@ -60,122 +57,78 @@
                 </div>
             </div>
             <div id="bg-img" class="bg-img">
-                <div class="card-body flex-column endTextPosi" id="endScreen"
-                    style="display: none;">
+                <div class="card-body flex-column endTextPosi" id="endScreen" style="display: none;">
                     <img class="brainSize" src="icon/brain-result.png">
                     <h1>COMPLETE <br> QUIZ</h1>
-
-                    <div class="img-tropy"><img class="tropy-size"
-                            src="icon/tropy.png"></div>
-
-                    <div>YOUR SCORE: <b id="amountOfRightQuestions"> XX</b>/<b
-                            id="amountOfQuestions">XX</b></div>
-
+                    <div class="img-tropy">
+                        <img class="tropy-size" src="icon/tropy.png">
+                    </div>
+                    <div>YOUR SCORE: <b id="amountOfRightQuestions"> XX</b>/<b id="amountOfQuestions">XX</b>
+                    </div>
                     <div class="buttonRow">
-                        <button onclick="restartGame()" id="restartGame"
-                            type="button"
-                            class="btn btn-primary">REPLAY</button>
+                        <button onclick="restartGame()" id="restartGame" type="button" class="btn btn-primary">REPLAY</button>
                     </div>
                 </div>
                 <div class="start-text-countainer">
-                    <div id="start"
-                        class="start-text card-body card-question-site flex-column d-flex">
-                        <span class="d-flex flex-column"
-                            style="align-items: center;">
+                    <div id="start" class="start-text card-body card-question-site flex-column d-flex">
+                        <span class="d-flex flex-column" style="align-items: center;">
                             <h4 class="card-title">
-                                <b>Welcome to the Awesome
-                                    QuizApp!</b>
+                                <b>Welcome to the Awesome QuizApp!</b>
                             </h4>
                             <h5 class="card-title">Ready for Challange?</h5>
                         </span>
-
                         <div class="buttonflex-end ">
-                            <button onclick="startGame()" id="restartGame"
-                                type="button"
-                                class="btn btn-primary bg-btn">START NOW
-                                &#10173;</button>
+                            <button onclick="startGame()" id="restartGame" type="button" class="btn btn-primary bg-btn">START NOW &#10173;</button>
                         </div>
                     </div>
-                    <div id="questionCountainer"
-                        class="d-none card-body card-question-site flex-column d-flex">
-                        <h5 class="card-title" id="questionText"></h5>
+                    <div id="questionCountainer" class="d-none card-body card-question-site flex-column d-flex">
+                        <h5 class="card-title reText" id="questionText"></h5>
                         <div>
                             <div id="questionBody">
-                                <div id="answerBtn1"
-                                    class="card mb-2 quiz-answer-card"
-                                    onclick="answer('answer_1')">
+                                <div id="answerBtn1" class="card mb-2 quiz-answer-card" onclick="answer('answer_1')">
                                     <div class="d-flex align-items">
-                                        <span
-                                            class="boxWithLetter p-3 bg-80808056 m-2">
+                                        <span class="boxWithLetter p-3 bg-80808056 m-2">
                                             <b>A</b></span>
-                                        <div class="card-body" id="answer_1">
-                                            <button type="button">
-                                                Antwort1</button>
+                                        <div class="card-body questionTextRE" id="answer_1">
+                                            <button type="button">Antwort1</button>
                                         </div>
                                     </div>
                                 </div>
-
-
-                                <div id="answerBtn2"
-                                    class="card mb-2 quiz-answer-card"
-                                    onclick="answer('answer_2')">
+                                <div id="answerBtn2" class="card mb-2 quiz-answer-card" onclick="answer('answer_2')">
                                     <div class="d-flex align-items">
-                                        <span
-                                            class="boxWithLetter p-3 bg-80808056 m-2"><b>B</b></span>
-                                        <div class="card-body" id="answer_2">
-                                            <button type="button">
-                                                Antwort2</button>
+                                        <span class="boxWithLetter p-3 bg-80808056 m-2"><b>B</b></span>
+                                        <div class="card-body questionTextRE" id="answer_2">
+                                            <button type="button">Antwort2</button>
                                         </div>
                                     </div>
                                 </div>
-
-
-
-                                <div id="answerBtn3"
-                                    class="card mb-2 quiz-answer-card"
-                                    onclick="answer('answer_3')">
+                                <div id="answerBtn3" class="card mb-2 quiz-answer-card" onclick="answer('answer_3')">
                                     <div class="d-flex align-items">
-                                        <span
-                                            class="boxWithLetter p-3 bg-80808056 m-2"><b>C</b></span>
-                                        <div class="card-body" id="answer_3">
-                                            <button type="button">
-                                                Antwort3</button>
+                                        <span class="boxWithLetter p-3 bg-80808056 m-2"><b>C</b></span>
+                                        <div class="card-body questionTextRE" id="answer_3">
+                                            <button type="button">Antwort3</button>
                                         </div>
                                     </div>
                                 </div>
-
-
-
-                                <div id="answerBtn4"
-                                    class="card mb-2 quiz-answer-card"
-                                    onclick="answer('answer_4')">
-                                    <div class="d-flex align-items">
-                                        <span
-                                            class="boxWithLetter p-3 bg-80808056 m-2"><b>D</b></span>
-                                        <div class="card-body" id="answer_4">
-                                            <button type="button">
-                                                Antwort4</button>
+                                <div id="answerBtn4" class="card mb-2 quiz-answer-card" onclick="answer('answer_4')">
+                                    <div class="d-flex align-items"> 
+                                        <span class="boxWithLetter p-3 bg-80808056 m-2"><b>D</b></span>
+                                        <div class="card-body questionTextRE" id="answer_4">
+                                            <button type="button">Antwort4</button>
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <div class="question-footer">
-                                    <span>
-                                        <b id="current-question"></b> von <b
-                                            id="all-questions"></b> Fragen
-                                    </span>
-                                    <button onclick="nextQuestion()"
-                                        id="nextButton" type="button"
-                                        class="btn btn-primary" disabled>Nächste
-                                        frage
-                                    </button>
+                                    <span><b id="current-question"></b> von <b id="all-questions"></b> Fragen</span>
+                                    <button onclick="nextQuestion()" id="nextButton" type="button" class="btn btn-primary" disabled>Nächste frage </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
 </body>
 
